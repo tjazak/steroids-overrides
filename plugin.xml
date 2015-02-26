@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.draftday.steroids-overrides" version="0.1">
+
+    <name>Steroids Overrides</name>
+
+    <platform name="ios">
+        <!--
+          As of 12/1/14 steroids 4.0.1 runtime is setting the location prompt subtext to: "To provide support for Cordova Geolocation plugin"
+          Appgvyer has indicated in an email thread that they will give us the ability to configure this text in their web interface, but for now the following configuration allows us to override this text.
+          Bug report filed: https://github.com/AppGyver/steroids/issues/640
+        -->
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+        <string>Required to deposit funds or enter paid contests.</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationUsageDescription">
+        <string>Required to deposit funds or enter paid contests.</string>
+        </config-file>
+    </platform>
+
+</plugin>
